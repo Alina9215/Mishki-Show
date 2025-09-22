@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Красочный сайт с видео фоном</title>
+<!-- Подключение шрифтов Google -->
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+/* Общие стили */
+html, body { margin: 0; padding: 0; height: 100%; font-family: 'Rubik', sans-serif; }
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ffd700, #ff4500);
+  color: #f8faf7;
+  line-height: 1.5;
+}
+
+/* Видео фон */
+.video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  z-index: -1;
+}
+.video-background video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Контент */
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Основная часть */
+.main-section {
+  background: linear-gradient(135deg, #ed5233, #f07157,#f59a88);
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+
+}
+/* Общие стили для галерей */
+.gallery-item {
+  width: 300px; /* фиксированная ширина */
+  height: 200px; /* фиксированная высота */
+  margin-right: 20px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+
+/* Остальные стили без изменений */
+section { padding: 60px 20px; }
+
+.header { display: flex; justify-content: space-between; align-items: center; padding: 20px; background: rgba(0,0,0,0.2); position: sticky; top: 0; z-index: 999; }
+.logo { display: flex; align-items: center; font-size: 2rem; font-weight: bold; color: #ef6400; }
+.logo span { margin-left: 10px; }
+.nav a { margin-left: 20px; text-decoration: none; color: #ffcc00; font-weight: 700; transition: color 0.3s; }
+.nav a:hover { color: #ffff00; }
+
+.hero { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; text-align: center; }
+.hero h1 { font-size: 3rem; margin-bottom: 20px; animation: pulse 2s infinite; color: #fff; }
+.hero h1 span { display: block; font-size: 4rem; color: #3afa00; font-weight: bold; }
+.hero p { font-size: 1.5rem; margin-bottom: 30px; font-weight: bold; color: #fff; }
+.btn-primary { background-color: #ff69b4; color: #fff; border: none; padding: 15px 30px; font-size: 1.2rem; border-radius: 50px; cursor: pointer; transition: background-color 0.3s, transform 0.3s; }
+.btn-primary:hover { background-color: #ff1493; transform: scale(1.05); }
+
+.about { background: rgba(255,255,255,0.1); text-align: center; color: #fff; }
+.about h2 { font-size: 2.5rem; margin-bottom: 20px; }
+.about p { max-width: 800px; margin: 0 auto; font-size: 1.2rem; }
+
+.features { background: rgba(0,0,0,0.2); text-align: center; }
+.features h2 { font-size: 2.5rem; margin-bottom: 40px; color: #fff; }
+.cards { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
+.card { background: rgba(255,255,255,0.2); padding: 30px; border-radius: 15px; width: 300px; backdrop-filter: blur(10px); box-shadow: 0 8px 16px rgba(0,0,0,0.3); transition: transform 0.3s, box-shadow 0.3s; color: #fff; }
+.card:hover { transform: translateY(-10px); box-shadow: 0 12px 24px rgba(0,0,0,0.4); }
+.card h3 { margin-bottom: 15px; font-size: 1.5rem; }
+
+.contact { background: rgba(0,0,0,0.3); text-align: center; color: #fff; }
+.contact h2 { font-size: 2.5rem; margin-bottom: 30px; }
+.contact-form { max-width: 500px; margin: 0 auto; display: flex; flex-direction: column; }
+.contact-form input, .contact-form textarea { padding: 15px; margin-bottom: 20px; border: none; border-radius: 10px; font-size: 1rem; }
+.contact-form button { align-self: center; margin-top: 10px; }
+
+.footer { padding: 20px; background: rgba(0,0,0,0.4); text-align: center; font-size: 0.9rem; color: #fff; }
+
+@keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
+
+.gallery-section { padding: 60px 20px; background: rgba(255,255,255,0.1); position: relative; text-align: center; color: #fff; }
+.gallery-title { font-size: 2.5rem; margin-bottom: 20px; }
+.gallery-container { display: flex; overflow: hidden; position: relative; max-width: 100%; margin: 0 auto; align-items: center; }
+.gallery-wrapper { display: flex; transition: transform 0.5s ease; }
+.gallery-item { min-width: 300px; margin-right: 20px; flex-shrink: 0; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
+.gallery-item img { width: 100%; height: auto; object-fit: cover; cursor:pointer; transition: transform 0.3s; }
+
+.arrow { position: absolute; top: 50%; transform: translateY(-50%); font-size: 3rem; background: rgba(0,0,0,0.3); border-radius: 50%; padding: 10px; cursor: pointer; user-select: none; transition: background 0.3s; color:#fff; z-index: 10; }
+.arrow:hover { background: rgba(0,0,0,0.6); }
+.arrow-left { left: 10px; }
+.arrow-right { right: 10px; }
+
+@media(max-width: 768px) {
+  .gallery-item { min-width: 200px; }
+  .arrow { font-size: 2rem; padding: 8px; }
+}
+
+/* Модальное окно */
+.modal { display: none; position: fixed; z-index: 9999; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); justify-content: center; align-items: center; }
+.modal img { max-width: 90%; max-height: 90%; border-radius: 10px; transition: transform 0.3s; }
+.modal-close { position: absolute; top: 20px; right: 30px; font-size: 2rem; color: #fff; cursor: pointer; font-weight: bold; }
+#shapesGallery { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+#shapesGallery img { width: 200px; cursor:pointer; border-radius:10px; border:2px solid #fff; }
+
+/* Фото в "Наших героях" */
+.costume-photo {
+  transition: transform 0.3s ease;
+  cursor:pointer;
+  border:3px solid #0d0e0d;
+  border-radius:10px;
+}
+.costume-photo.enlarged {
+  transform: scale(1.5);
+  z-index: 1000;
+  position: relative;
+}
+</style>
+</head>
+<body>
+<div class="content">
+<!-- Видео фон -->
+<div class="video-background">
+<video autoplay muted loop playsinline>
+<source src="/img/1.07.mp4" type="video/mp4" /> Ваш браузер не поддерживает видео
+</video>
+</div>
+
+<header class="header">
+<div class="logo"> 🐻<span style="margin-left:10px;" class="title-coral">Мишки шоу и Друзья</span> </div>
+<nav class="nav">
+<a href="#home">Главная</a>
+<a href="#features">Особенности</a>
+<a href="#contacts">Контакты</a>
+<a href="#gallery">Галерея</a>
+<a href="#pricing">Цена</a>
+</nav>
+</header>
+
+<section class="hero" id="home" style="min-height: 70vh; display:flex; align-items:center; justify-content:center; text-align:center; background: transparent; position: relative; z-index: 1;">
+<h1><span>Добро пожаловать в мир ярких красок!</span></h1>
+<p class="p-peterburg">Белый Мишка и Друзья в Петербурге и ЛО</p>
+<p>Создаем уникальные и красочные поздравления для вас</p>
+<button class="btn-primary" id="startBtn">Начать сейчас</button>
+</section>
+
+<div class="main-section" style="width:100%; flex:1 0 auto;">
+<!-- О нас -->
+<section class="about" id="about">
+<h2>О нас</h2>
+<p>Мы предлагаем незабываемые шоу с участием ярких и креативных ростовых костюмов! Наши аниматоры создадут праздник для детей и взрослых, добавив ярких красок и веселья в любой праздник.</p>
+</section>
+
+<!-- Особенности -->
+<section class="features" id="features">
+<h2>Наши особенности</h2>
+<div class="cards">
+<div class="card">
+<h3>Творческий подход и импровизация</h3>
+<p>Способность адаптироваться к ситуации и придумывать интересные сценарии поздравления.</p>
+</div>
+<div class="card">
+<h3>Отличные навыки коммуникации и актерского мастерства</h3>
+<p>Умение взаимодействовать с детьми и взрослыми, создавать атмосферу веселья.</p>
+</div>
+<div class="card">
+<h3>Ответственность и пунктуальность</h3>
+<p>Своевременное прибытие на мероприятие и выполнение своих обязанностей.</p>
+</div>
+</div>
+</section>
+
+<!-- Наши герои -->
+<section class="costumes" id="costumes" style="padding:60px 20px; background:rgba(255,255,255,0.1); text-align:center;">
+<h2>Наши Герои</h2>
+<div style="display:flex; flex-wrap:wrap; justify-content:center; gap:20px;">
+<div style="text-align:center;">
+<img src="/img/Медвежонок.png" alt="Белый Мишка" style="width: 400px; cursor:pointer; border: 3px solid #000; border-radius:10px;" class="costume-photo" data-description="Белый Мишка- милый и добрый герой, который украсит любое мероприятие. Зажигательные танцы Большого Мишки- никого не оставят равнодушными!" />
+<p style="font-weight: bold;">Белый Мишка</p>
+</div>
+<div style="text-align:center;">
+<img src="/img/чебур.jpg" alt="Чебурашка" style="width: 290px; cursor:pointer; border: 3px solid #000; border-radius:10px;" class="costume-photo" data-description="Чебурашка- забавный и дружелюбный персонаж, идеально подходит для веселых праздников." />
+<p style="font-weight: bold;">Чебурашка</p>
+</div>
+<div style="text-align:center;">
+<img src="/img/зайчик.jpg" alt="Зайчик" style="width: 480px; cursor:pointer; border: 3px solid #000; border-radius:10px;" class="costume-photo" data-description="Зайчик- веселый и энергичный герой, который обязательно развеселит всех участников." />
+<p style="font-weight: bold;">Зайчик</p>
+</div>
+<div style="text-align:center;">
+<img src="/img/лисенок.jpg" alt="Лисенок" style="width: 400px; cursor:pointer; border: 3px solid #000; border-radius:10px;" class="costume-photo" data-description="Лисенок- хитрый и ловкий герой, добавит приключений и веселья." />
+<p style="font-weight: bold;">Лисенок</p>
+</div>
+</div>
+</section>
+
+<!-- Галерея -->
+<section class="gallery-section" id="gallery" style="background:rgba(255,255,255,0.1);">
+<h2 class="gallery-title">Галерея</h2>
+<div class="gallery-container">
+  <div class="arrow arrow-left" id="prev">&#10094;</div>
+  <div class="gallery-wrapper" id="gallery-wrapper">
+    <div class="gallery-item"><img src="/img/Мишка 1..webp" alt="Фото 1" /></div>
+    <div class="gallery-item"><img src="/img/свадьба.jpg" alt="фото 1." /></div>
+    <div class="gallery-item"><img src="/img/мишка очаг..webp" alt="Фото 2" /></div>
+    <div class="gallery-item"><img src="/img/зайчик с лидой4 (1).jpg" alt="Фото 3" /></div>
+    <div class="gallery-item"><img src="/img/заяц и лиса на выписке (1).jpg" alt="фото 3/" /></div>
+    <div class="gallery-item"><img src="/img/мишка очагг.webp" alt="Фото 4" /></div>
+    <div class="gallery-item"><img src="/img/чебурашка в школе2 (4).jpg" alt="Фото 5" /></div>
+    <div class="gallery-item"><img src="/img/лисенок и девочка.jpg" alt="Фото 5." /></div>
+    <div class="gallery-item"><img src="/img/медведь2.jpg" alt="Фото 6" /></div>
+    <div class="gallery-item"><img src="/img/Зайчик в саду.jpg" alt="Фото 6." /></div>
+    <div class="gallery-item"><img src="/img/Чебурашка Аннино.webp" alt="фото 7" /></div>
+    <div class="gallery-item"><img src="/img/Мидка и девочка в красном.jpg" alt="Фото 7." /></div>
+    <div class="gallery-item"><img src="/img/чебуратор (1).jpg" alt="фото 8" /></div>
+  </div>
+  <div class="arrow arrow-right" id="next">&#10095;</div>
+</div>
+</section>
+
+<!-- Остальной код остается без изменений -->
+<!-- Раздел с воздушными шарами -->
+<section class="balloons" id="balloons" style="padding:60px 20px; background:rgba(255,255,255,0.1);">
+<h2 class="gallery-title">Воздушные шары</h2>
+<div id="shapesGallery" style="margin-bottom:20px; flex-wrap:wrap; justify-content:center; gap:10px; display:flex;">
+  <img src="/img/фонтан шар хром+обычные шары (1).jpg" alt="Шар 2" style="width:200px; cursor:pointer; border-radius:10px; border:2px solid #fff;" /> 
+  <img src="/img/шар разноцветный.jpg" alt="Шар 3" style="width:200px; cursor:pointer; border-radius:10px; border:2px solid #fff;" /> 
+  <img src="/img/фонтан звезды.jpg" alt="Шар 4" style="width:200px; cursor:pointer; border-radius:10px; border:2px solid #fff;" />
+  <img src="/img/сердца.jpg" alt="Шар 5" style="width: 200px; cursor: pointer; border-radius:10px; border: 2px solid #fff;"/>
+  <img src="/img/шар хромовый (1).jpg" alt="." style="width: 200px; cursor: pointer; border-radius:10px; border: 2px solid #fff;"> 
+  <img src="/img/шар цифра.jpg" alt="." style="width: 200px; cursor:pointer; border-radius:10px; border: 2px solid #fff;">
+</div>
+<p>Кликните на раздел, чтобы показать/скрыть фотографии воздушных шаров.</p>
+</section>
+
+<!-- Стоимость -->
+<section class="pricing" id="pricing" style="padding:60px 20px; background:rgba(75, 59, 59, 0.1);">
+<h2 style="text-align:center; font-size:2.5rem; margin-bottom:20px;" class="pricing-title">Стоимость поздравления</h2>
+<div class="pricing-container" style="display:flex; justify-content:center; gap:20px; flex-wrap:wrap;">
+<div class="pricing-block" id="express" style="background:#8f8c8c; padding:20px; border-radius:10px; width:300px;">
+<h3>Экспресс поздравление</h3>
+<p>Описание: Быстрый и яркий подарок для любого события. Продолжительностью 10-15 минут</p>
+<p>Стоимость: от 3000</p>
+</div>
+<div class="pricing-block" id="standard" style="background:#8f8c8c; padding:20px; border-radius:10px; width:300px;">
+<h3>Стандартное поздравление</h3>
+<p>Описание: Поздравление Макси с индивидуальным подходом. Продолжительностью 30-40 минут.</p>
+<p>Стоимость: от 5000₽</p>
+</div>
+<div class="pricing-block" id="balloons" style="background:#8f8c8c; padding:20px; border-radius:10px; width:300px;">
+  <h4>Воздушные шары</h4>
+  <p>Описание: Гелевые шары- 170р/шт. Шар звезда и сердце- 350р/шт. Шар цифра- 950р/шт. Наличие и цены наборов уточняем.</p>
+<!-- Можно добавить контент, если нужно -->
+</div>
+</div>
+</section>
+
+<!-- Контакты -->
+<section class="contact" id="contacts">
+<h2>Контакты</h2>
+<p>Телефон: +7 995 629 48 39</p>
+<p>Email: animatorspb@internet.ru</p>
+<p>Авито: <a href="https://www.avito.ru/sankt-peterburg/predlozheniya_uslug/belyy_mishka_pozdravlenie.lisenok.zayka.cheburashka_4669565779" style="color:#ffd700;">ссылка</a></p>
+<p>Telegram: <a href="https://t.me/Alino4ka920" style="color:#ffd700;">ссылка</a></p>
+</section>
+
+<!-- Обратная форма -->
+<form id="feedbackForm" action="/submit_feedback" method="post" style="max-width:600px; margin:auto; display:flex; flex-direction:column; gap:15px; padding:20px; background: rgba(255,255,255,0.2); border-radius:10px;">
+  <input type="text" name="name" placeholder="Ваше имя" required>
+  <input type="email" name="email" placeholder="Ваш email" required>
+  <textarea name="message" placeholder="Сообщение" required></textarea>
+  <button type="submit">Отправить</button>
+</form>
+
+<!-- Скрипт для AJAX отправки -->
+<script>
+  // Обработка формы обратной связи
+  document.getElementById('feedbackForm').addEventListener('submit', function(e) {
+    e.preventDefault(); // Предотвращаем стандартную отправку
+
+    const formData = new FormData(this);
+
+    fetch('/submit_feedback', {
+      method: 'POST',
+      body: formData
+    })
+    .then(response => {
+      if (!response.ok) throw new Error('Network response was not ok');
+      return response.json();
+    })
+    .then(data => {
+      alert(data.message || 'Сообщение отправлено!');
+      this.reset();
+    })
+    .catch(error => {
+      alert('Ошибка при отправке сообщения.');
+      console.error('Error:', error);
+    });
+  });
+</script>
+
+<!-- Раздел отзывов -->
+<!-- Раздел отзывов -->
+<section class="reviews" id="reviews" style="padding:60px 20px; background: rgba(255,255,255,0.1); text-align:center;">
+  <h2 style="font-size:2.5rem; margin-bottom:20px;">Отзывы наших клиентов</h2>
+  <form id="reviewForm" style="max-width:600px; margin:auto; display:flex; flex-direction:column; gap:15px; background: rgba(255,255,255,0.2); padding:20px; border-radius:10px;">
+    <input type="text" id="name" placeholder="Ваше имя" required style="padding:10px; border:none; border-radius:5px; font-size:1rem;" />
+    <textarea id="message" placeholder="Ваш отзыв" required style="padding:10px; border:none; border-radius:5px; font-size:1rem; min-height:100px;"></textarea>
+    <button type="submit" style="padding:10px 20px; border:none; border-radius:5px; background:#f18b8b; color:#fff; font-size:1.2rem; cursor:pointer;">Оставить отзыв</button>
+  </form>
+  
+  <!-- Список отзывов -->
+  <div id="reviewsList" style="margin-top:40px; display:flex; flex-direction:column; gap:20px; align-items:center;"></div>
+</section>
+<script>
+  // Инициализация массива отзывов из localStorage или пустой
+  let reviews = JSON.parse(localStorage.getItem('siteReviews')) || [];
+  const reviewsList = document.getElementById('reviewsList');
+
+  // Функция отображения отзывов
+  function renderReviews() {
+    reviewsList.innerHTML = '';
+    reviews.slice().reverse().forEach(review => {
+      const reviewDiv = document.createElement('div');
+      reviewDiv.style.background = 'rgba(255,255,255,0.2)';
+      reviewDiv.style.padding = '15px';
+      reviewDiv.style.borderRadius = '10px';
+      reviewDiv.style.width = '100%';
+      reviewDiv.style.maxWidth = '600px';
+      reviewDiv.style.boxShadow = '0 4px 8px rgba(0,0,0,0.2)';
+      
+      const author = document.createElement('h3');
+      author.textContent = review.name;
+      author.style.margin = '0 0 10px 0';
+      author.style.fontSize = '1.2rem';
+      author.style.color = '#ffd700';
+
+      const message = document.createElement('p');
+      message.textContent = review.message;
+      message.style.margin = '0';
+
+      reviewDiv.appendChild(author);
+      reviewDiv.appendChild(message);
+      reviewsList.appendChild(reviewDiv);
+    });
+  }
+
+  // Первоначальный рендер отзывов
+  renderReviews();
+
+  // Обработка формы для добавления нового отзыва
+  document.getElementById('reviewForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const nameInput = document.getElementById('name');
+    const messageInput = document.getElementById('message');
+
+    const newReview = {
+      name: nameInput.value.trim(),
+      message: messageInput.value.trim()
+    };
+    
+    reviews.push(newReview);
+    localStorage.setItem('siteReviews', JSON.stringify(reviews));
+    renderReviews();
+    this.reset();
+  });
+</script>
+
+<!-- Подвал -->
+<footer class="footer">
+<p>&copy; 2024 Аниматор СПБ. Все права защищены.</p>
+</footer>
+
+<!-- Модальное окно для увеличения фото -->
+<div class="modal" id="imageModal">
+<div class="modal-close" id="modalClose">&times;</div>
+<img src="" alt="Увеличенное изображение" id="modalImage" />
+</div>
+
+<script>
+// Скрипт для плавного скролла
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    const targetID = this.getAttribute('href').slice(1);
+    const target = document.getElementById(targetID);
+    if (target) target.scrollIntoView({ behavior: 'smooth' });
+  });
+});
+
+// Управление модальным окном для изображений
+const modal = document.getElementById('imageModal');
+const modalImg = document.getElementById('modalImage');
+const modalClose = document.getElementById('modalClose');
+
+document.querySelectorAll('.gallery-item img').forEach(img => {
+  img.addEventListener('click', () => {
+    modal.style.display = 'flex';
+    modalImg.src = img.src;
+    modalImg.alt = img.alt;
+  });
+});
+
+modalClose.addEventListener('click', () => {
+  modal.style.display = 'none';
+});
+modal.addEventListener('click', (e) => {
+  if (e.target === modal) modal.style.display = 'none';
+});
+
+// Галерея стрелками
+const galleryWrapper = document.getElementById('gallery-wrapper');
+const galleryItems = document.querySelectorAll('.gallery-item');
+const totalItems = galleryItems.length;
+let currentIndex = 0;
+
+const moveGallery = () => {
+  if (galleryItems.length === 0) return;
+  const itemWidth = galleryItems[0].offsetWidth + parseFloat(getComputedStyle(galleryItems[0]).marginRight);
+  // Ограничение
+  if (currentIndex < 0) currentIndex = 0;
+  if (currentIndex > totalItems - 1) currentIndex = totalItems - 1;
+  galleryWrapper.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+};
+
+// Обработчики стрелок
+document.getElementById('next').addEventListener('click', () => {
+  if (currentIndex < totalItems - 1) { currentIndex++; moveGallery(); }
+});
+document.getElementById('prev').addEventListener('click', () => {
+  if (currentIndex > 0) { currentIndex--; moveGallery(); }
+});
+
+// Переход при ресайзе
+window.addEventListener('resize', () => {
+  moveGallery();
+});
+
+// Показ/скрытие воздушных шаров
+const balloonsSection = document.querySelector('#balloons');
+const shapesGallery = document.getElementById('shapesGallery');
+
+if (balloonsSection && shapesGallery) {
+  balloonsSection.addEventListener('click', () => {
+    if (shapesGallery.style.display === 'none' || shapesGallery.style.display === '') {
+      shapesGallery.style.display = 'flex';
+    } else {
+      shapesGallery.style.display = 'none';
+    }
+  });
+}
+
+// Увеличение изображений воздушных шаров
+document.querySelectorAll('#shapesGallery img').forEach(img => {
+  img.addEventListener('click', () => {
+    document.getElementById('modalImage').src = img.src;
+    document.getElementById('modalImage').alt = img.alt;
+    document.getElementById('imageModal').style.display = 'flex';
+  });
+});
+
+// Закрытие модального окна
+document.getElementById('modalClose').addEventListener('click', () => {
+  document.getElementById('imageModal').style.display = 'none';
+});
+document.getElementById('imageModal').addEventListener('click', (e) => {
+  if (e.target === document.getElementById('imageModal')) {
+    document.getElementById('imageModal').style.display = 'none';
+  }
+});
+
+// Увеличение фото в "Наших героях"
+document.querySelectorAll('.costume-photo').forEach(img => {
+  img.addEventListener('click', () => {
+    if (!img.classList.contains('enlarged')) {
+      img.classList.add('enlarged');
+    } else {
+      img.classList.remove('enlarged');
+    }
+  });
+});
+</script>
+</div>
+</body>
+</html>
+
