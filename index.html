@@ -4,6 +4,10 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Красочный сайт с видео фоном</title>
+<!-- Мета-теги для SEO -->
+<meta name="description" content="Яркое и красочное шоу с ростовыми костюмами, анимацией и видео фоном в Санкт-Петербурге и ЛО. Закажите незабываемое поздравление для детей и взрослых. Лучший праздник в Петербурге!" />
+<meta name="keywords" content="аниматор, шоу, ростовые костюмы, праздник, детский праздник, поздравление, видео фон, галерея фотографий, воздушные шары, Санкт-Петербург, ЛО, детские развлечения" />
+
 <!-- Подключение шрифтов Google -->
 <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet" />
 <style>
@@ -44,7 +48,7 @@ body {
 
 /* Основная часть */
 .main-section {
-  background: linear-gradient(135deg, #ed5233, #f07157,#f59a88);
+  background: linear-gradient(135deg, #ed5233, #f07157,#f6917d);
   width: 100%;
   flex: 1;
   display: flex;
@@ -54,7 +58,7 @@ body {
 /* Общие стили для галерей */
 .gallery-item {
   width: 300px; /* фиксированная ширина */
-  height: 200px; /* фиксированная высота */
+  height: 300px; /* фиксированная высота */
   margin-right: 20px;
   flex-shrink: 0;
   border-radius: 10px;
@@ -81,9 +85,9 @@ section { padding: 60px 20px; }
 .nav a:hover { color: #ffff00; }
 
 .hero { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; text-align: center; }
-.hero h1 { font-size: 3rem; margin-bottom: 20px; animation: pulse 2s infinite; color: #fff; }
+.hero h1 { font-size: 3rem; margin-bottom: 20px; animation: pulse 2s infinite; color: #fdfbfb; }
 .hero h1 span { display: block; font-size: 4rem; color: #3afa00; font-weight: bold; }
-.hero p { font-size: 1.5rem; margin-bottom: 30px; font-weight: bold; color: #fff; }
+.hero p { font-size: 1.5rem; margin-bottom: 30px; font-weight: bold; color: #f225c9; }
 .btn-primary { background-color: #ff69b4; color: #fff; border: none; padding: 15px 30px; font-size: 1.2rem; border-radius: 50px; cursor: pointer; transition: background-color 0.3s, transform 0.3s; }
 .btn-primary:hover { background-color: #ff1493; transform: scale(1.05); }
 
@@ -151,7 +155,7 @@ section { padding: 60px 20px; }
 <!-- Видео фон -->
 <div class="video-background">
 <video autoplay muted loop playsinline>
-<source src="/img/1.07.mp4" type="video/mp4" /> Ваш браузер не поддерживает видео
+<source src="img/video.mp4" type="video/mp4" /> Ваш браузер не поддерживает видео
 </video>
 </div>
 
@@ -204,19 +208,19 @@ section { padding: 60px 20px; }
 <h2>Наши Герои</h2>
 <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:20px;">
 <div style="text-align:center;">
-<img src="/img/Медвежонок.png" alt="Белый Мишка" style="width: 400px; cursor:pointer; border: 3px solid #000; border-radius:10px;" class="costume-photo" data-description="Белый Мишка- милый и добрый герой, который украсит любое мероприятие. Зажигательные танцы Большого Мишки- никого не оставят равнодушными!" />
+<img src="img/Медвежонок.png" alt="Белый Мишка" style="width: 400px; cursor:pointer; border: 3px solid #000; border-radius:10px;" class="costume-photo" data-description="Белый Мишка- милый и добрый герой, который украсит любое мероприятие. Зажигательные танцы Большого Мишки- никого не оставят равнодушными!" />
 <p style="font-weight: bold;">Белый Мишка</p>
 </div>
 <div style="text-align:center;">
-<img src="/img/чебур.jpg" alt="Чебурашка" style="width: 290px; cursor:pointer; border: 3px solid #000; border-radius:10px;" class="costume-photo" data-description="Чебурашка- забавный и дружелюбный персонаж, идеально подходит для веселых праздников." />
+<img src="img/чебур.jpg" alt="Чебурашка" style="width: 290px; cursor:pointer; border: 3px solid #000; border-radius:10px;" class="costume-photo" data-description="Чебурашка- забавный и дружелюбный персонаж, идеально подходит для веселых праздников." />
 <p style="font-weight: bold;">Чебурашка</p>
 </div>
 <div style="text-align:center;">
-<img src="/img/зайчик.jpg" alt="Зайчик" style="width: 480px; cursor:pointer; border: 3px solid #000; border-radius:10px;" class="costume-photo" data-description="Зайчик- веселый и энергичный герой, который обязательно развеселит всех участников." />
+<img src="img/зайчик.jpg" alt="Зайчик" style="width: 480px; cursor:pointer; border: 3px solid #000; border-radius:10px;" class="costume-photo" data-description="Зайчик- веселый и энергичный герой, который обязательно развеселит всех участников." />
 <p style="font-weight: bold;">Зайчик</p>
 </div>
 <div style="text-align:center;">
-<img src="/img/лисенок.jpg" alt="Лисенок" style="width: 400px; cursor:pointer; border: 3px solid #000; border-radius:10px;" class="costume-photo" data-description="Лисенок- хитрый и ловкий герой, добавит приключений и веселья." />
+<img src="img/лисенок.jpg" alt="Лисенок" style="width: 400px; cursor:pointer; border: 3px solid #000; border-radius:10px;" class="costume-photo" data-description="Лисенок- хитрый и ловкий герой, добавит приключений и веселья." />
 <p style="font-weight: bold;">Лисенок</p>
 </div>
 </div>
@@ -228,20 +232,22 @@ section { padding: 60px 20px; }
 <div class="gallery-container">
   <div class="arrow arrow-left" id="prev">&#10094;</div>
   <div class="gallery-wrapper" id="gallery-wrapper">
-    <div class="gallery-item"><img src="/img/Мишка 1..webp" alt="Фото 1" /></div>
-    <div class="gallery-item"><img src="/img/свадьба.jpg" alt="фото 1." /></div>
-    <div class="gallery-item"><img src="/img/мишка очаг..webp" alt="Фото 2" /></div>
-    <div class="gallery-item"><img src="/img/зайчик с лидой4 (1).jpg" alt="Фото 3" /></div>
-    <div class="gallery-item"><img src="/img/заяц и лиса на выписке (1).jpg" alt="фото 3/" /></div>
-    <div class="gallery-item"><img src="/img/мишка очагг.webp" alt="Фото 4" /></div>
-    <div class="gallery-item"><img src="/img/чебурашка в школе2 (4).jpg" alt="Фото 5" /></div>
-    <div class="gallery-item"><img src="/img/лисенок и девочка.jpg" alt="Фото 5." /></div>
-    <div class="gallery-item"><img src="/img/медведь2.jpg" alt="Фото 6" /></div>
-    <div class="gallery-item"><img src="/img/Зайчик в саду.jpg" alt="Фото 6." /></div>
-    <div class="gallery-item"><img src="/img/Чебурашка Аннино.webp" alt="фото 7" /></div>
-    <div class="gallery-item"><img src="/img/Мидка и девочка в красном.jpg" alt="Фото 7." /></div>
-    <div class="gallery-item"><img src="/img/чебуратор (1).jpg" alt="фото 8" /></div>
-  </div>
+    <div class="gallery-item"><img src="img/медведь2.jpg" alt="Фото 1" /></div>
+    <div class="gallery-item"><img src="img/свадьба.jpg" alt="фото 1." /></div>
+    <div class="gallery-item"><img src="img/зайка в джоки.jpg" alt="Фото 2" /></div>
+    <div class="gallery-item"><img src="img/чебур аннино (1).jpg" alt="Фото 3" /></div>
+    <div class="gallery-item"><img src="img/заяц и лиса на выписке (1).jpg" alt="фото 3/" /></div>
+    <div class="gallery-item"><img src="img/мишка  с мамой и девочкой.jpg" alt="Фото 4" /></div>
+    <div class="gallery-item"><img src="img/Лиса в саду.jpg" alt="Фото 5." /></div>
+    <div class="gallery-item"><img src="img/в клубе.jpg" alt="Фото 6" /></div>
+    <div class="gallery-item"><img src="img/Зайчик в саду.jpg" alt="Фото 6." /></div>
+    <div class="gallery-item"><img src="img/чебур-новоселье.jpg" alt="фото 7" /></div>
+    <div class="gallery-item"><img src="img/Мидка и девочка в красном.jpg" alt="Фото 7." /></div>
+    <div class="gallery-item"><img src="img/чебуратор (1).jpg" alt="фото 8" /></div>
+        <div class="gallery-item"><img src="img/мишка-очаг.jpg" alt="фото 7" /></div>
+           
+         <div class="gallery-item"><img src="img/мишка-в-ресторане.jpg" alt="фото 7" /></div>
+ </div>
   <div class="arrow arrow-right" id="next">&#10095;</div>
 </div>
 </section>
@@ -251,12 +257,12 @@ section { padding: 60px 20px; }
 <section class="balloons" id="balloons" style="padding:60px 20px; background:rgba(255,255,255,0.1);">
 <h2 class="gallery-title">Воздушные шары</h2>
 <div id="shapesGallery" style="margin-bottom:20px; flex-wrap:wrap; justify-content:center; gap:10px; display:flex;">
-  <img src="/img/фонтан шар хром+обычные шары (1).jpg" alt="Шар 2" style="width:200px; cursor:pointer; border-radius:10px; border:2px solid #fff;" /> 
-  <img src="/img/шар разноцветный.jpg" alt="Шар 3" style="width:200px; cursor:pointer; border-radius:10px; border:2px solid #fff;" /> 
-  <img src="/img/фонтан звезды.jpg" alt="Шар 4" style="width:200px; cursor:pointer; border-radius:10px; border:2px solid #fff;" />
-  <img src="/img/сердца.jpg" alt="Шар 5" style="width: 200px; cursor: pointer; border-radius:10px; border: 2px solid #fff;"/>
-  <img src="/img/шар хромовый (1).jpg" alt="." style="width: 200px; cursor: pointer; border-radius:10px; border: 2px solid #fff;"> 
-  <img src="/img/шар цифра.jpg" alt="." style="width: 200px; cursor:pointer; border-radius:10px; border: 2px solid #fff;">
+  <img src="img/фонтан шар хром+обычные шары (1).jpg" alt="Шар 2" style="width:200px; cursor:pointer; border-radius:10px; border:2px solid #fff;" /> 
+  <img src="img/шар разноцветный.jpg" alt="Шар 3" style="width:200px; cursor:pointer; border-radius:10px; border:2px solid #fff;" /> 
+  <img src="img/фонтан звезды.jpg" alt="Шар 4" style="width:200px; cursor:pointer; border-radius:10px; border:2px solid #fff;" />
+  <img src="img/сердца.jpg" alt="Шар 5" style="width: 200px; cursor: pointer; border-radius:10px; border: 2px solid #fff;"/>
+  <img src="img/шар хромовый (1).jpg" alt="." style="width: 200px; cursor: pointer; border-radius:10px; border: 2px solid #fff;"> 
+  <img src="img/шар цифра.jpg" alt="." style="width: 200px; cursor:pointer; border-radius:10px; border: 2px solid #fff;">
 </div>
 <p>Кликните на раздел, чтобы показать/скрыть фотографии воздушных шаров.</p>
 </section>
@@ -283,116 +289,69 @@ section { padding: 60px 20px; }
 </div>
 </section>
 
-<!-- Контакты -->
+<!-- Обратная форма -->
 <section class="contact" id="contacts">
 <h2>Контакты</h2>
 <p>Телефон: +7 995 629 48 39</p>
 <p>Email: animatorspb@internet.ru</p>
-<p>Авито: <a href="https://www.avito.ru/sankt-peterburg/predlozheniya_uslug/belyy_mishka_pozdravlenie.lisenok.zayka.cheburashka_4669565779" style="color:#ffd700;">ссылка</a></p>
-<p>Telegram: <a href="https://t.me/Alino4ka920" style="color:#ffd700;">ссылка</a></p>
+<p>Авито отзывы: <a href="https://www.avito.ru/sankt-peterburg/predlozheniya_uslug/belyy_mishka_pozdravlenie.lisenok.zayka.cheburashka_4669565779#open-reviews-list" style="color:#ffd700;" target="_blank" rel="noopener noreferrer">ссылка</a></p>
+<p>Telegram: <a href="https://t.me/Alino4ka920" style="color:#ffd700;" target="_blank" rel="noopener noreferrer">ссылка</a></p>
 </section>
 
 <!-- Обратная форма -->
-<form id="feedbackForm" action="/submit_feedback" method="post" style="max-width:600px; margin:auto; display:flex; flex-direction:column; gap:15px; padding:20px; background: rgba(255,255,255,0.2); border-radius:10px;">
-  <input type="text" name="name" placeholder="Ваше имя" required>
-  <input type="email" name="email" placeholder="Ваш email" required>
+<section style="max-width:600px; margin:auto; padding:20px;">
+<h2>Обратная связь</h2>
+<form id="feedbackForm" action="https://formspree.io/f/mwprjpll" method="POST" style="display:flex; flex-direction:column; gap:15px; background: rgba(255,255,255,0.2); padding:20px; border-radius:10px;">
+  <input type="text" name="name" placeholder="Ваше имя" required />
+  <input type="email" name="_replyto" placeholder="Ваш email" required />
   <textarea name="message" placeholder="Сообщение" required></textarea>
   <button type="submit">Отправить</button>
 </form>
-
-<!-- Скрипт для AJAX отправки -->
-<script>
-  // Обработка формы обратной связи
-  document.getElementById('feedbackForm').addEventListener('submit', function(e) {
-    e.preventDefault(); // Предотвращаем стандартную отправку
-
-    const formData = new FormData(this);
-
-    fetch('/submit_feedback', {
-      method: 'POST',
-      body: formData
-    })
-    .then(response => {
-      if (!response.ok) throw new Error('Network response was not ok');
-      return response.json();
-    })
-    .then(data => {
-      alert(data.message || 'Сообщение отправлено!');
-      this.reset();
-    })
-    .catch(error => {
-      alert('Ошибка при отправке сообщения.');
-      console.error('Error:', error);
-    });
-  });
-</script>
-
-<!-- Раздел отзывов -->
-<!-- Раздел отзывов -->
-<section class="reviews" id="reviews" style="padding:60px 20px; background: rgba(255,255,255,0.1); text-align:center;">
-  <h2 style="font-size:2.5rem; margin-bottom:20px;">Отзывы наших клиентов</h2>
-  <form id="reviewForm" style="max-width:600px; margin:auto; display:flex; flex-direction:column; gap:15px; background: rgba(255,255,255,0.2); padding:20px; border-radius:10px;">
-    <input type="text" id="name" placeholder="Ваше имя" required style="padding:10px; border:none; border-radius:5px; font-size:1rem;" />
-    <textarea id="message" placeholder="Ваш отзыв" required style="padding:10px; border:none; border-radius:5px; font-size:1rem; min-height:100px;"></textarea>
-    <button type="submit" style="padding:10px 20px; border:none; border-radius:5px; background:#f18b8b; color:#fff; font-size:1.2rem; cursor:pointer;">Оставить отзыв</button>
-  </form>
-  
-  <!-- Список отзывов -->
-  <div id="reviewsList" style="margin-top:40px; display:flex; flex-direction:column; gap:20px; align-items:center;"></div>
+<div id="formResponse" style="margin-top:15px; font-weight:bold; color:#fff;"></div>
 </section>
+
 <script>
-  // Инициализация массива отзывов из localStorage или пустой
-  let reviews = JSON.parse(localStorage.getItem('siteReviews')) || [];
-  const reviewsList = document.getElementById('reviewsList');
+// Обработка отправки формы
+document.getElementById('feedbackForm').addEventListener('submit', function(e) {
+  e.preventDefault();
 
-  // Функция отображения отзывов
-  function renderReviews() {
-    reviewsList.innerHTML = '';
-    reviews.slice().reverse().forEach(review => {
-      const reviewDiv = document.createElement('div');
-      reviewDiv.style.background = 'rgba(255,255,255,0.2)';
-      reviewDiv.style.padding = '15px';
-      reviewDiv.style.borderRadius = '10px';
-      reviewDiv.style.width = '100%';
-      reviewDiv.style.maxWidth = '600px';
-      reviewDiv.style.boxShadow = '0 4px 8px rgba(0,0,0,0.2)';
-      
-      const author = document.createElement('h3');
-      author.textContent = review.name;
-      author.style.margin = '0 0 10px 0';
-      author.style.fontSize = '1.2rem';
-      author.style.color = '#ffd700';
+  const form = e.target;
+  const formData = new FormData(form);
+  const responseDiv = document.getElementById('formResponse');
 
-      const message = document.createElement('p');
-      message.textContent = review.message;
-      message.style.margin = '0';
-
-      reviewDiv.appendChild(author);
-      reviewDiv.appendChild(message);
-      reviewsList.appendChild(reviewDiv);
-    });
-  }
-
-  // Первоначальный рендер отзывов
-  renderReviews();
-
-  // Обработка формы для добавления нового отзыва
-  document.getElementById('reviewForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const nameInput = document.getElementById('name');
-    const messageInput = document.getElementById('message');
-
-    const newReview = {
-      name: nameInput.value.trim(),
-      message: messageInput.value.trim()
-    };
-    
-    reviews.push(newReview);
-    localStorage.setItem('siteReviews', JSON.stringify(reviews));
-    renderReviews();
-    this.reset();
+  fetch(form.action, {
+    method: 'POST',
+    body: formData,
+    headers: {
+      'Accept': 'application/json'
+    }
+  }).then(response => {
+    if (response.ok) {
+      responseDiv.innerHTML = 'Спасибо! Ваша обратная связь отправлена.';
+      form.reset();
+    } else {
+      response.json().then(data => {
+        if (Object.hasOwn(data, 'errors')) {
+          responseDiv.innerHTML = 'Ошибка: ' + data.errors.map(error => error.message).join(', ');
+        } else {
+          responseDiv.innerHTML = 'Произошла ошибка при отправке. Попробуйте позже.';
+        }
+      });
+    }
+  }).catch(error => {
+    responseDiv.innerHTML = 'Ошибка сети. Попробуйте позже.';
   });
+});
+// Обработка клика по "Начать сейчас"
+document.getElementById('startBtn').addEventListener('click', function() {
+  const costumesSection = document.getElementById('costumes');
+  if (costumesSection) {
+    costumesSection.scrollIntoView({ behavior: 'smooth' });
+  }
+});
 </script>
+
+
 
 <!-- Подвал -->
 <footer class="footer">
