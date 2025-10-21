@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -23,7 +25,7 @@ body {
   line-height: 1.5;
 }
 
-/* Видео фон - ИСПРАВЛЕНО для мобильных */
+/* Видео фон - УЛУЧШЕННАЯ ВЕРСИЯ */
 .video-background {
   position: fixed;
   top: 0;
@@ -33,21 +35,33 @@ body {
   overflow: hidden;
   z-index: -1;
 }
+
 .video-background video {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
 }
 
-/* Фолбэк для мобильных, если видео не работает */
+.video-background video.loaded {
+  opacity: 1;
+}
+
 .video-fallback {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100vh;
-  background: linear-gradient(135deg, #ffd700, #ff4500);
+  background: linear-gradient(135deg, #ffd700, #ff4500, #ff69b4);
   z-index: -2;
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+}
+
+.video-fallback.hidden {
+  opacity: 0;
 }
 
 /* Контент */
@@ -66,21 +80,6 @@ body {
   flex: 1;
   display: flex;
   flex-direction: column;
-}
-
-/* Медиа-запрос для мобильных устройств */
-@media (max-width: 768px) {
-  .video-background {
-    display: none; /* Скрываем видео на мобильных */
-  }
-  
-  body {
-    background: linear-gradient(135deg, #ffd700, #ff4500);
-  }
-  
-  .main-section {
-    background: linear-gradient(135deg, #ed5233, #f07157, #f6917d);
-  }
 }
 
 /* Остальные стили остаются без изменений */
@@ -412,13 +411,13 @@ section { padding: 60px 20px; }
 <body>
 <!-- Видео фон и фолбэк -->
 <div class="video-background">
-  <video autoplay muted loop playsinline id="bgVideo">
+  <video id="bgVideo" muted loop playsinline preload="auto" poster="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
     <source src="img/video.mp4" type="video/mp4" /> 
     <source src="img/video.webm" type="video/webm" />
     Ваш браузер не поддерживает видео
   </video>
 </div>
-<div class="video-fallback"></div>
+<div class="video-fallback" id="videoFallback"></div>
 
 <div class="content">
 <!-- Шапка с телефоном -->
@@ -587,32 +586,69 @@ section { padding: 60px 20px; }
 </section>
 
 <script>
-// Функция для обработки видеофона
+// УЛУЧШЕННАЯ ФУНКЦИЯ ДЛЯ ВИДЕОФОНА
 function initVideoBackground() {
   const video = document.getElementById('bgVideo');
-  const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+  const fallback = document.getElementById('videoFallback');
   
-  if (isMobile) {
-    // На мобильных устройствах скрываем видео и используем градиентный фон
-    document.querySelector('.video-background').style.display = 'none';
-    document.querySelector('.video-fallback').style.display = 'block';
-  } else {
-    // На десктопах пытаемся воспроизвести видео
-    document.querySelector('.video-fallback').style.display = 'none';
+  // Проверяем поддержку видео
+  function canPlayVideo() {
+    return video.canPlayType && video.canPlayType('video/mp4').replace('no', '');
+  }
+  
+  // Пытаемся воспроизвести видео
+  function attemptVideoPlay() {
+    if (!canPlayVideo()) {
+      showFallback();
+      return;
+    }
     
     const playPromise = video.play();
+    
     if (playPromise !== undefined) {
-      playPromise.catch(error => {
-        // Если видео не воспроизводится, показываем фолбэк
-        console.log('Video playback failed, using fallback');
-        document.querySelector('.video-background').style.display = 'none';
-        document.querySelector('.video-fallback').style.display = 'block';
+      playPromise.then(() => {
+        // Видео успешно воспроизводится
+        video.classList.add('loaded');
+        setTimeout(() => {
+          fallback.classList.add('hidden');
+        }, 1000);
+      }).catch(error => {
+        // Видео не воспроизводится - показываем фолбэк
+        console.log('Video autoplay failed, using fallback background');
+        showFallback();
       });
     }
   }
+  
+  function showFallback() {
+    video.style.display = 'none';
+    fallback.style.display = 'block';
+    fallback.classList.remove('hidden');
+  }
+  
+  // Ждем загрузки видео
+  video.addEventListener('loadeddata', function() {
+    attemptVideoPlay();
+  });
+  
+  // Если видео не загрузилось за 5 секунд, показываем фолбэк
+  setTimeout(() => {
+    if (video.readyState < 2) { // HAVE_CURRENT_DATA
+      showFallback();
+    }
+  }, 5000);
+  
+  // Также пытаемся воспроизвести при любом взаимодействии пользователя
+  document.addEventListener('click', function() {
+    if (video.style.display !== 'none') {
+      video.play().catch(() => {
+        showFallback();
+      });
+    }
+  }, { once: true });
 }
 
-// Инициализация видеофона при загрузке страницы
+// Запускаем инициализацию видеофона
 document.addEventListener('DOMContentLoaded', initVideoBackground);
 
 // Исправленная галерея
@@ -766,7 +802,7 @@ document.getElementById('feedbackForm').addEventListener('submit', function(e) {
   }).then(response => {
     if (response.ok) {
       responseDiv.innerHTML = 'Спасибо! Ваша обратная связь отправлена.';
-      responseDiv.style.color = '#3afa00';
+      responseDiv.style.color= '#3afa00';
       form.reset();
     } else {
       responseDiv.innerHTML = 'Произошла ошибка при отправке. Попробуйте позже.';
