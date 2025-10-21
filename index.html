@@ -1,12 +1,13 @@
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Аниматоры и ростовые куклы в СПБ и ЛО недорого.Заказ детского праздника с выездом.</title>
+<title>Аниматоры и ростовые куклы в СПБ и ЛО недорого. Заказ детского праздника с выездом.</title>
 <!-- Мета-теги для SEO -->
-<meta name="description" content=Заказ аниматоров с ростовыми костюмами в СПБ. Мишка, Чебурашка, Лисичка, Зайчик для детских праздников. Выезд по всем районам и частично ЛО. Недорого. Закажите незабываемый праздник! ☎️ "+79956004839" />
-<meta name="keywords" content="аниматор, шоу, ростовые костюмы, праздник, детский праздник, поздравление, аниматор на день рождения, детский аниматор, услуги аниматора, заказать аниматора,праздник с аниматором, аниматоры для детей, день рождения,свадьба, корпоратив, выпускной,поздравление ростовым медведем, ростовая кукла медведь,ростовой медведь заказать на праздник, заказать ростового медведя на праздник в спб, поздравление с днем рождения ростовым медведем, белый мишка на праздник, медведь, организация праздников, танцующий белый медведь, медведь поздравить аниматор, поздравление от белого мишки в санкт-петербурге, ростовая кукла белый медведь, Чебурашка на праздник, чебурашка на день рождения, танцующий чебурашка, чебуратор на день рождение, зайка на день рождения, танцующий зайка, розовый зайчик, зайчик аниматор, аниматор зайка, ростовой костюм зайца, Лисенок на день рождения, лиса аниматор, лиса ростовой костюм, поздравление лисой день рождение, танцующая лиса. лисичка на праздник, зайчик и лисичка придут на день рождение, воздушные шары, Санкт-Петербург, ЛО, детские развлечения, аниматоры спб, " />
+<meta name="description" content="Заказ аниматоров с ростовыми костюмами в СПБ. Мишка, Чебурашка, Лисичка, Зайчик для детских праздников. Выезд по всем районам и частично ЛО. Недорого. Закажите незабываемый праздник! ☎️ +7 (995) 600-48-39" />
+<meta name="keywords" content="аниматор, шоу, ростовые костюмы, праздник, детский праздник, поздравление, аниматор на день рождения, детский аниматор, услуги аниматора, заказать аниматора, праздник с аниматором, аниматоры для детей, день рождения, свадьба, корпоратив, выпускной, поздравление ростовым медведем, ростовая кукла медведь, ростовой медведь заказать на праздник, заказать ростового медведя на праздник в спб, поздравление с днем рождения ростовым медведем, белый мишка на праздник, медведь, организация праздников, танцующий белый медведь, медведь поздравить аниматор, поздравление от белого мишки в санкт-петербурге, ростовая кукла белый медведь, Чебурашка на праздник, чебурашка на день рождения, танцующий чебурашка, чебуратор на день рождение, зайка на день рождения, танцующий зайка, розовый зайчик, зайчик аниматор, аниматор зайка, ростовой костюм зайца, Лисенок на день рождения, лиса аниматор, лиса ростовой костюм, поздравление лисой день рождение, танцующая лиса, лисичка на праздник, зайчик и лисичка придут на день рождение, воздушные шары, Санкт-Петербург, ЛО, детские развлечения, аниматоры спб" />
 
 <!-- Подключение шрифтов Google -->
 <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet" />
@@ -53,12 +54,117 @@ body {
   flex: 1;
   display: flex;
   flex-direction: column;
-
 }
+
+/* Шапка с телефоном */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: rgba(0,0,0,0.7);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  flex-wrap: wrap;
+}
+
+.header-contact {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.phone-link {
+  color: #ffcc00;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  padding: 8px 15px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  border: 2px solid #ffcc00;
+}
+
+.phone-link:hover {
+  background: #ffcc00;
+  color: #000;
+  transform: scale(1.05);
+}
+
+.contact-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.contact-btn {
+  padding: 8px 15px;
+  background: #ff69b4;
+  color: white;
+  text-decoration: none;
+  border-radius: 20px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.contact-btn:hover {
+  background: transparent;
+  border-color: #ff69b4;
+  transform: scale(1.05);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #ef6400;
+}
+.logo span { margin-left: 10px; }
+.nav {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+.nav a {
+  text-decoration: none;
+  color: #ffcc00;
+  font-weight: 700;
+  transition: color 0.3s;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+.nav a:hover {
+  color: #ffff00;
+  background: rgba(255,255,255,0.1);
+}
+
+/* Исправленные стили для героев */
+.costume-photo {
+  width: 250px; /* Фиксированный размер */
+  height: 250px;
+  object-fit: cover;
+  cursor: pointer;
+  border: 3px solid #0d0e0d;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+  margin: 10px;
+}
+
+.costume-photo.enlarged {
+  transform: scale(1.8);
+  z-index: 1000;
+  position: relative;
+  background: rgba(0,0,0,0.8);
+}
+
 /* Общие стили для галерей */
 .gallery-item {
-  width: 300px; /* фиксированная ширина */
-  height: 300px; /* фиксированная высота */
+  width: 300px;
+  height: 300px;
   margin-right: 20px;
   flex-shrink: 0;
   border-radius: 10px;
@@ -74,22 +180,37 @@ body {
   transition: transform 0.3s;
 }
 
-
-/* Остальные стили без изменений */
+/* Остальные стили */
 section { padding: 60px 20px; }
 
-.header { display: flex; justify-content: space-between; align-items: center; padding: 20px; background: rgba(0,0,0,0.2); position: sticky; top: 0; z-index: 999; }
-.logo { display: flex; align-items: center; font-size: 2rem; font-weight: bold; color: #ef6400; }
-.logo span { margin-left: 10px; }
-.nav a { margin-left: 20px; text-decoration: none; color: #ffcc00; font-weight: 700; transition: color 0.3s; }
-.nav a:hover { color: #ffff00; }
-
-.hero { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; text-align: center; }
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh;
+  text-align: center;
+  background: transparent;
+  position: relative;
+  z-index: 1;
+}
 .hero h1 { font-size: 3rem; margin-bottom: 20px; animation: pulse 2s infinite; color: #fdfbfb; }
 .hero h1 span { display: block; font-size: 4rem; color: #3afa00; font-weight: bold; }
 .hero p { font-size: 1.5rem; margin-bottom: 30px; font-weight: bold; color: #f225c9; }
-.btn-primary { background-color: #ff69b4; color: #fff; border: none; padding: 15px 30px; font-size: 1.2rem; border-radius: 50px; cursor: pointer; transition: background-color 0.3s, transform 0.3s; }
-.btn-primary:hover { background-color: #ff1493; transform: scale(1.05); }
+.btn-primary {
+  background-color: #ff69b4;
+  color: #fff;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+.btn-primary:hover {
+  background-color: #ff1493;
+  transform: scale(1.05);
+}
 
 .about { background: rgba(255,255,255,0.1); text-align: center; color: #fff; }
 .about h2 { font-size: 2.5rem; margin-bottom: 20px; }
@@ -114,39 +235,149 @@ section { padding: 60px 20px; }
 
 .gallery-section { padding: 60px 20px; background: rgba(255,255,255,0.1); position: relative; text-align: center; color: #fff; }
 .gallery-title { font-size: 2.5rem; margin-bottom: 20px; }
-.gallery-container { display: flex; overflow: hidden; position: relative; max-width: 100%; margin: 0 auto; align-items: center; }
-.gallery-wrapper { display: flex; transition: transform 0.5s ease; }
-.gallery-item { min-width: 300px; margin-right: 20px; flex-shrink: 0; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
-.gallery-item img { width: 100%; height: auto; object-fit: cover; cursor:pointer; transition: transform 0.3s; }
+.gallery-container {
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  max-width: 100%;
+  margin: 0 auto;
+  align-items: center;
+}
+.gallery-wrapper {
+  display: flex;
+  transition: transform 0.5s ease;
+  gap: 20px;
+}
+.gallery-item {
+  min-width: 300px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor:pointer;
+  transition: transform 0.3s;
+}
 
-.arrow { position: absolute; top: 50%; transform: translateY(-50%); font-size: 3rem; background: rgba(0,0,0,0.3); border-radius: 50%; padding: 10px; cursor: pointer; user-select: none; transition: background 0.3s; color:#fff; z-index: 10; }
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 3rem;
+  background: rgba(0,0,0,0.3);
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.3s;
+  color:#fff;
+  z-index: 10;
+  border: none;
+}
 .arrow:hover { background: rgba(0,0,0,0.6); }
 .arrow-left { left: 10px; }
 .arrow-right { right: 10px; }
 
 @media(max-width: 768px) {
-  .gallery-item { min-width: 200px; }
+  .header { flex-direction: column; gap: 15px; text-align: center; }
+  .header-contact { justify-content: center; }
+  .nav { justify-content: center; }
+  .gallery-item { min-width: 250px; }
   .arrow { font-size: 2rem; padding: 8px; }
+  .hero h1 { font-size: 2rem; }
+  .hero h1 span { font-size: 2.5rem; }
+  .costume-photo { width: 200px; height: 200px; }
 }
 
 /* Модальное окно */
-.modal { display: none; position: fixed; z-index: 9999; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); justify-content: center; align-items: center; }
-.modal img { max-width: 90%; max-height: 90%; border-radius: 10px; transition: transform 0.3s; }
-.modal-close { position: absolute; top: 20px; right: 30px; font-size: 2rem; color: #fff; cursor: pointer; font-weight: bold; }
-#shapesGallery { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
-#shapesGallery img { width: 200px; cursor:pointer; border-radius:10px; border:2px solid #fff; }
-
-/* Фото в "Наших героях" */
-.costume-photo {
-  transition: transform 0.3s ease;
-  cursor:pointer;
-  border:3px solid #0d0e0d;
-  border-radius:10px;
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  justify-content: center;
+  align-items: center;
 }
-.costume-photo.enlarged {
-  transform: scale(1.5);
-  z-index: 1000;
-  position: relative;
+.modal img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+  box-shadow: 0 0 30px rgba(255,255,255,0.3);
+}
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 3rem;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+  background: none;
+  border: none;
+  z-index: 10000;
+}
+#shapesGallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+#shapesGallery img {
+  width: 200px;
+  height: 200px;
+  cursor:pointer;
+  border-radius:10px;
+  border:2px solid #fff;
+  object-fit: cover;
+}
+
+/* Стили для контактов */
+.contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+
+.contact-link {
+  color: #ffcc00;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: 2px solid #ffcc00;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+
+.contact-link:hover {
+  background: #ffcc00;
+  color: #000;
+  transform: scale(1.05);
+}
+
+/* Стили для цен */
+.pricing-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.pricing-block {
+  background: #8f8c8c;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  text-align: center;
 }
 </style>
 </head>
@@ -159,243 +390,173 @@ section { padding: 60px 20px; }
 </video>
 </div>
 
+<!-- Шапка с телефоном -->
 <header class="header">
-<div class="logo"> 🐻<span style="margin-left:10px;" class="title-coral">Мишки шоу и Друзья</span> </div>
-<nav class="nav">
-<a href="#home">Главная</a>
-<a href="#features">Особенности</a>
-<a href="#contacts">Контакты</a>
-<a href="#gallery">Галерея</a>
-<a href="#pricing">Цена</a>
-</nav>
+  <div class="logo">
+    🐻<span style="margin-left:10px;" class="title-coral">Мишки шоу и Друзья</span>
+  </div>
+ 
+  <div class="header-contact">
+    <a href="tel:+79956004839" class="phone-link">📞 +7 (995) 600-48-39</a>
+    <div class="contact-buttons">
+      <a href="https://t.me/Alino4ka920" class="contact-btn" target="_blank">Telegram</a>
+      <a href="https://www.avito.ru/sankt-peterburg/predlozheniya_uslug/belyy_mishka_pozdravlenie.lisenok.zayka.cheburashka_4669565779#open-reviews-list" class="contact-btn" target="_blank">Авито</a>
+    </div>
+  </div>
+
+  <nav class="nav">
+    <a href="#home">Главная</a>
+    <a href="#features">Особенности</a>
+    <a href="#contacts">Контакты</a>
+    <a href="#gallery">Галерея</a>
+    <a href="#pricing">Цена</a>
+  </nav>
 </header>
 
-<section class="hero" id="home" style="min-height: 70vh; display:flex; align-items:center; justify-content:center; text-align:center; background: transparent; position: relative; z-index: 1;">
-<h1><span>Добро пожаловать в мир ярких красок!</span></h1>
-<p class="p-peterburg">Белый Мишка и Друзья в Петербурге и ЛО</p>
-<p>Создаем уникальные и красочные поздравления для вас</p>
-<button class="btn-primary" id="startBtn">Начать сейчас</button>
+<section class="hero" id="home">
+  <h1><span>Добро пожаловать в мир ярких красок!</span></h1>
+  <p class="p-peterburg">Белый Мишка и Друзья в Петербурге и ЛО</p>
+  <p>Создаем уникальные и красочные поздравления для вас</p>
+  <button class="btn-primary" id="startBtn">Заказать праздник</button>
 </section>
 
-<div class="main-section" style="width:100%; flex:1 0 auto;">
+<div class="main-section">
 <!-- О нас -->
 <section class="about" id="about">
-<h2>О нас</h2>
-<p>Мы предлагаем незабываемые шоу с участием ярких и креативных ростовых костюмов! Наши аниматоры создадут праздник для детей и взрослых, добавив ярких красок и веселья в любой праздник.</p>
+  <h2>О нас</h2>
+  <p>Мы предлагаем незабываемые шоу с участием ярких и креативных ростовых костюмов! Наши аниматоры создадут праздник для детей и взрослых, добавив ярких красок и веселья в любой праздник.</p>
 </section>
 
 <!-- Особенности -->
 <section class="features" id="features">
-<h2>Наши особенности</h2>
-<div class="cards">
-<div class="card">
-<h3>Творческий подход и импровизация</h3>
-<p>Способность адаптироваться к ситуации и придумывать интересные сценарии поздравления.</p>
-</div>
-<div class="card">
-<h3>Отличные навыки коммуникации и актерского мастерства</h3>
-<p>Умение взаимодействовать с детьми и взрослыми, создавать атмосферу веселья.</p>
-</div>
-<div class="card">
-<h3>Ответственность и пунктуальность</h3>
-<p>Своевременное прибытие на мероприятие и выполнение своих обязанностей.</p>
-</div>
-</div>
+  <h2>Наши особенности</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>Творческий подход и импровизация</h3>
+      <p>Способность адаптироваться к ситуации и придумывать интересные сценарии поздравления.</p>
+    </div>
+    <div class="card">
+      <h3>Отличные навыки коммуникации и актерского мастерства</h3>
+      <p>Умение взаимодействовать с детьми и взрослыми, создавать атмосферу веселья.</p>
+    </div>
+    <div class="card">
+      <h3>Ответственность и пунктуальность</h3>
+      <p>Своевременное прибытие на мероприятие и выполнение своих обязанностей.</p>
+    </div>
+  </div>
 </section>
 
 <!-- Наши герои -->
-<section class="costumes" id="costumes" style="padding:60px 20px; background:rgba(255,255,255,0.1); text-align:center;">
-<h2>Наши Герои</h2>
-<div style="display:flex; flex-wrap:wrap; justify-content:center; gap:20px;">
-<div style="text-align:center;">
-<img src="img/Медвежонок.png" alt="Белый Мишка" style="width: 400px; cursor:pointer; border: 3px solid #000; border-radius:10px;" class="costume-photo" data-description="Белый Мишка- милый и добрый герой, который украсит любое мероприятие. Зажигательные танцы Большого Мишки- никого не оставят равнодушными!" />
-<p style="font-weight: bold;">Белый Мишка</p>
-</div>
-<div style="text-align:center;">
-<img src="img/чебур.jpg" alt="Чебурашка" style="width: 290px; cursor:pointer; border: 3px solid #000; border-radius:10px;" class="costume-photo" data-description="Чебурашка- забавный и дружелюбный персонаж, идеально подходит для веселых праздников." />
-<p style="font-weight: bold;">Чебурашка</p>
-</div>
-<div style="text-align:center;">
-<img src="img/зайчик.jpg" alt="Зайчик" style="width: 480px; cursor:pointer; border: 3px solid #000; border-radius:10px;" class="costume-photo" data-description="Зайчик- веселый и энергичный герой, который обязательно развеселит всех участников." />
-<p style="font-weight: bold;">Зайчик</p>
-</div>
-<div style="text-align:center;">
-<img src="img/лисенок.jpg" alt="Лисенок" style="width: 400px; cursor:pointer; border: 3px solid #000; border-radius:10px;" class="costume-photo" data-description="Лисенок- хитрый и ловкий герой, добавит приключений и веселья." />
-<p style="font-weight: bold;">Лисенок</p>
-</div>
-</div>
+<section class="costumes" id="costumes">
+  <h2>Наши Герои</h2>
+  <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:20px;">
+    <div style="text-align:center;">
+      <img src="img/Медвежонок.png" alt="Белый Мишка" class="costume-photo" data-description="Белый Мишка- милый и добрый герой, который украсит любое мероприятие. Зажигательные танцы Большого Мишки- никого не оставят равнодушными!" />
+      <p style="font-weight: bold;">Белый Мишка</p>
+    </div>
+    <div style="text-align:center;">
+      <img src="img/чебур.jpg" alt="Чебурашка" class="costume-photo" data-description="Чебурашка- забавный и дружелюбный персонаж, идеально подходит для веселых праздников." />
+      <p style="font-weight: bold;">Чебурашка</p>
+    </div>
+    <div style="text-align:center;">
+      <img src="img/зайчик.jpg" alt="Зайчик" class="costume-photo" data-description="Зайчик- веселый и энергичный герой, который обязательно развеселит всех участников." />
+      <p style="font-weight: bold;">Зайчик</p>
+    </div>
+    <div style="text-align:center;">
+      <img src="img/лисенок.jpg" alt="Лисенок" class="costume-photo" data-description="Лисенок- хитрый и ловкий герой, добавит приключений и веселья." />
+      <p style="font-weight: bold;">Лисенок</p>
+    </div>
+  </div>
 </section>
 
 <!-- Галерея -->
-<section class="gallery-section" id="gallery" style="background:rgba(255,255,255,0.1);">
-<h2 class="gallery-title">Галерея</h2>
-<div class="gallery-container">
-  <div class="arrow arrow-left" id="prev">&#10094;</div>
-  <div class="gallery-wrapper" id="gallery-wrapper">
-    <div class="gallery-item"><img src="img/медведь2.jpg" alt="Фото 1" /></div>
-    <div class="gallery-item"><img src="img/свадьба.jpg" alt="фото 1." /></div>
-    <div class="gallery-item"><img src="img/зай.дж.jpg" alt="Фото 2" /></div>
-    <div class="gallery-item"><img src="img/чебур.Анн.jpg" alt="Фото 3" /></div>
-    <div class="gallery-item"><img src="img/заяц и лиса на выписке (1).jpg" alt="фото 3/" /></div>
-    <div class="gallery-item"><img src="img/мишПодр.jpg" alt="Фото 4" /></div>
-    <div class="gallery-item"><img src="img/Лиссад.jpg" alt="Фото 5." /></div>
-    <div class="gallery-item"><img src="img/в клубе.jpg" alt="Фото 6" /></div>
-    <div class="gallery-item"><img src="img/Зайчик в саду.jpg" alt="Фото 6." /></div>
-    <div class="gallery-item"><img src="img/чебНов.jpg" alt="фото 7" /></div>
-    <div class="gallery-item"><img src="img/Мидка и девочка в красном.jpg" alt="Фото 7." /></div>
-    <div class="gallery-item"><img src="img/чебуратор (1).jpg" alt="фото 8" /></div>
-        <div class="gallery-item"><img src="img/мишкаОча.jpg" alt="фото 7" /></div>
-           
-         <div class="gallery-item"><img src="img/мишкаРест.jpg" alt="фото 7" /></div>
- </div>
-  <div class="arrow arrow-right" id="next">&#10095;</div>
-</div>
+<section class="gallery-section" id="gallery">
+  <h2 class="gallery-title">Галерея</h2>
+  <div class="gallery-container">
+    <button class="arrow arrow-left" id="prev">&#10094;</button>
+    <div class="gallery-wrapper" id="gallery-wrapper">
+      <div class="gallery-item"><img src="img/медведь2.jpg" alt="Фото 1" /></div>
+      <div class="gallery-item"><img src="img/свадьба.jpg" alt="фото 1." /></div>
+      <div class="gallery-item"><img src="img/зай.дж.jpg" alt="Фото 2" /></div>
+      <div class="gallery-item"><img src="img/чебур.Анн.jpg" alt="Фото 3" /></div>
+      <div class="gallery-item"><img src="img/заяц и лиса на выписке (1).jpg" alt="фото 3/" /></div>
+      <div class="gallery-item"><img src="img/мишПодр.jpg" alt="Фото 4" /></div>
+      <div class="gallery-item"><img src="img/Лиссад.jpg" alt="Фото 5." /></div>
+      <div class="gallery-item"><img src="img/в клубе.jpg" alt="Фото 6" /></div>
+      <div class="gallery-item"><img src="img/Зайчик в саду.jpg" alt="Фото 6." /></div>
+      <div class="gallery-item"><img src="img/чебНов.jpg" alt="фото 7" /></div>
+      <div class="gallery-item"><img src="img/Мидка и девочка в красном.jpg" alt="Фото 7." /></div>
+      <div class="gallery-item"><img src="img/чебуратор (1).jpg" alt="фото 8" /></div>
+      <div class="gallery-item"><img src="img/мишкаОча.jpg" alt="фото 7" /></div>
+      <div class="gallery-item"><img src="img/мишкаРест.jpg" alt="фото 7" /></div>
+    </div>
+    <button class="arrow arrow-right" id="next">&#10095;</button>
+  </div>
 </section>
 
-<!-- Остальной код остается без изменений -->
-<!-- Раздел с воздушными шарами -->
-<section class="balloons" id="balloons" style="padding:60px 20px; background:rgba(255,255,255,0.1);">
-<h2 class="gallery-title">Воздушные шары</h2>
-<div id="shapesGallery" style="margin-bottom:20px; flex-wrap:wrap; justify-content:center; gap:10px; display:flex;">
-  <img src="img/фонтан шар хром+обычные шары (1).jpg" alt="Шар 2" style="width:200px; cursor:pointer; border-radius:10px; border:2px solid #fff;" /> 
-  <img src="img/шар разноцветный.jpg" alt="Шар 3" style="width:200px; cursor:pointer; border-radius:10px; border:2px solid #fff;" /> 
-  <img src="img/фонтан звезды.jpg" alt="Шар 4" style="width:200px; cursor:pointer; border-radius:10px; border:2px solid #fff;" />
-  <img src="img/сердца.jpg" alt="Шар 5" style="width: 200px; cursor: pointer; border-radius:10px; border: 2px solid #fff;"/>
-  <img src="img/шар хромовый (1).jpg" alt="." style="width: 200px; cursor: pointer; border-radius:10px; border: 2px solid #fff;"> 
-  <img src="img/шар цифра.jpg" alt="." style="width: 200px; cursor:pointer; border-radius:10px; border: 2px solid #fff;">
-</div>
-<p>Кликните на раздел, чтобы показать/скрыть фотографии воздушных шаров.</p>
+<!-- Воздушные шары -->
+<section class="balloons" id="balloons">
+  <h2 class="gallery-title">Воздушные шары</h2>
+  <div id="shapesGallery" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 20px;">
+    <img src="img/фонтан шар хром+обычные шары (1).jpg" alt="Шар 2" />
+    <img src="img/шар разноцветный.jpg" alt="Шар 3" />
+    <img src="img/фонтан звезды.jpg" alt="Шар 4" />
+    <img src="img/сердца.jpg" alt="Шар 5" />
+    <img src="img/шар хромовый (1).jpg" alt="Хромовый шар">
+    <img src="img/шар цифра.jpg" alt="Цифровой шар">
+  </div>
+  <p>Кликните на фотографию для увеличения</p>
 </section>
 
 <!-- Стоимость -->
-<section class="pricing" id="pricing" style="padding:60px 20px; background:rgba(75, 59, 59, 0.1);">
-<h2 style="text-align:center; font-size:2.5rem; margin-bottom:20px;" class="pricing-title">Стоимость поздравления</h2>
-<div class="pricing-container" style="display:flex; justify-content:center; gap:20px; flex-wrap:wrap;">
-<div class="pricing-block" id="express" style="background:#8f8c8c; padding:20px; border-radius:10px; width:300px;">
-<h3>Экспресс поздравление</h3>
-<p>Описание: Быстрый и яркий подарок для любого события. Продолжительностью 10-15 минут</p>
-<p>Стоимость: от 3000</p>
-</div>
-<div class="pricing-block" id="standard" style="background:#8f8c8c; padding:20px; border-radius:10px; width:300px;">
-<h3>Стандартное поздравление</h3>
-<p>Описание: Поздравление Макси с индивидуальным подходом. Продолжительностью 30-40 минут.</p>
-<p>Стоимость: от 5000₽</p>
-</div>
-<div class="pricing-block" id="balloons" style="background:#8f8c8c; padding:20px; border-radius:10px; width:300px;">
-  <h4>Воздушные шары</h4>
-  <p>Описание: Гелевые шары- 170р/шт. Шар звезда и сердце- 350р/шт. Шар цифра- 950р/шт. Наличие и цены наборов уточняем.</p>
-<!-- Можно добавить контент, если нужно -->
-</div>
-</div>
+<section class="pricing" id="pricing">
+  <h2 class="pricing-title">Стоимость поздравления</h2>
+  <div class="pricing-container">
+    <div class="pricing-block" id="express">
+      <h3>Экспресс поздравление</h3>
+      <p>Описание: Быстрый и яркий подарок для любого события. Продолжительностью 10-15 минут</p>
+      <p>Стоимость: от 3000₽</p>
+    </div>
+    <div class="pricing-block" id="standard">
+      <h3>Стандартное поздравление</h3>
+      <p>Описание: Поздравление Макси с индивидуальным подходом. Продолжительностью 30-40 минут.</p>
+      <p>Стоимость: от 5000₽</p>
+    </div>
+    <div class="pricing-block" id="balloons-price">
+      <h4>Воздушные шары</h4>
+      <p>Описание: Гелевые шары- 170р/шт. Шар звезда и сердце- 350р/шт. Шар цифра- 950р/шт. Наличие и цены наборов уточняем.</p>
+    </div>
+  </div>
 </section>
 
-<!-- Обратная форма -->
+<!-- Контакты -->
 <section class="contact" id="contacts">
-<h2>Контакты</h2>
-<p>Телефон: +7 995 600 48 39</p>
-<p>Email: animatorspb@internet.ru</p>
-<p>Авито отзывы: <a href="https://www.avito.ru/sankt-peterburg/predlozheniya_uslug/belyy_mishka_pozdravlenie.lisenok.zayka.cheburashka_4669565779#open-reviews-list" style="color:#ffd700;" target="_blank" rel="noopener noreferrer">ссылка</a></p>
-<p>Telegram: <a href="https://t.me/Alino4ka920" style="color:#ffd700;" target="_blank" rel="noopener noreferrer">ссылка</a></p>
+  <h2>Контакты</h2>
+ 
+  <div class="contact-links">
+    <a href="tel:+79956004839" class="contact-link">📞 +7 (995) 600-48-39</a>
+    <a href="mailto:animatorspb@internet.ru" class="contact-link">✉️ Email</a>
+    <a href="https://t.me/Alino4ka920" class="contact-link" target="_blank">📱 Telegram</a>
+    <a href="https://www.avito.ru/sankt-peterburg/predlozheniya_uslug/belyy_mishka_pozdravlenie.lisenok.zayka.cheburashka_4669565779#open-reviews-list" class="contact-link" target="_blank">⭐ Авито отзывы</a>
+  </div>
+
+  <p>📍 Работаем по всему Санкт-Петербургу и Ленинградской области</p>
 </section>
 
 <!-- Обратная форма -->
 <section style="max-width:600px; margin:auto; padding:20px;">
-<h2>Обратная связь</h2>
-<form id="feedbackForm" action="https://formspree.io/f/mwprjpll" method="POST" style="display:flex; flex-direction:column; gap:15px; background: rgba(255,255,255,0.2); padding:20px; border-radius:10px;">
-  <input type="text" name="name" placeholder="Ваше имя" required />
-  <input type="email" name="_replyto" placeholder="Ваш email" required />
-  <textarea name="message" placeholder="Сообщение" required></textarea>
-  <button type="submit">Отправить</button>
-</form>
-<div id="formResponse" style="margin-top:15px; font-weight:bold; color:#fff;"></div>
+  <h2>Обратная связь</h2>
+  <form id="feedbackForm" action="https://formspree.io/f/mwprjpll" method="POST" style="display:flex; flex-direction:column; gap:15px; background: rgba(255,255,255,0.2); padding:20px; border-radius:10px;">
+    <input type="text" name="name" placeholder="Ваше имя" required />
+    <input type="email" name="_replyto" placeholder="Ваш email" required />
+    <textarea name="message" placeholder="Сообщение" required style="height: 100px;"></textarea>
+    <button type="submit" style="padding: 15px; background: #ff69b4; color: white; border: none; border-radius: 10px; cursor: pointer;">Отправить</button>
+  </form>
+  <div id="formResponse" style="margin-top:15px; font-weight:bold;"></div>
 </section>
 
 <script>
-// Обработка отправки формы
-document.getElementById('feedbackForm').addEventListener('submit', function(e) {
-  e.preventDefault();
-
-  const form = e.target;
-  const formData = new FormData(form);
-  const responseDiv = document.getElementById('formResponse');
-
-  fetch(form.action, {
-    method: 'POST',
-    body: formData,
-    headers: {
-      'Accept': 'application/json'
-    }
-  }).then(response => {
-    if (response.ok) {
-      responseDiv.innerHTML = 'Спасибо! Ваша обратная связь отправлена.';
-      form.reset();
-    } else {
-      response.json().then(data => {
-        if (Object.hasOwn(data, 'errors')) {
-          responseDiv.innerHTML = 'Ошибка: ' + data.errors.map(error => error.message).join(', ');
-        } else {
-          responseDiv.innerHTML = 'Произошла ошибка при отправке. Попробуйте позже.';
-        }
-      });
-    }
-  }).catch(error => {
-    responseDiv.innerHTML = 'Ошибка сети. Попробуйте позже.';
-  });
-});
-// Обработка клика по "Начать сейчас"
-document.getElementById('startBtn').addEventListener('click', function() {
-  const costumesSection = document.getElementById('costumes');
-  if (costumesSection) {
-    costumesSection.scrollIntoView({ behavior: 'smooth' });
-  }
-});
-</script>
-
-
-
-<!-- Подвал -->
-<footer class="footer">
-<p>&copy; 2024 Аниматор СПБ. Все права защищены.</p>
-</footer>
-
-<!-- Модальное окно для увеличения фото -->
-<div class="modal" id="imageModal">
-<div class="modal-close" id="modalClose">&times;</div>
-<img src="" alt="Увеличенное изображение" id="modalImage" />
-</div>
-
-<script>
-// Скрипт для плавного скролла
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function(e) {
-    e.preventDefault();
-    const targetID = this.getAttribute('href').slice(1);
-    const target = document.getElementById(targetID);
-    if (target) target.scrollIntoView({ behavior: 'smooth' });
-  });
-});
-
-// Управление модальным окном для изображений
-const modal = document.getElementById('imageModal');
-const modalImg = document.getElementById('modalImage');
-const modalClose = document.getElementById('modalClose');
-
-document.querySelectorAll('.gallery-item img').forEach(img => {
-  img.addEventListener('click', () => {
-    modal.style.display = 'flex';
-    modalImg.src = img.src;
-    modalImg.alt = img.alt;
-  });
-});
-
-modalClose.addEventListener('click', () => {
-  modal.style.display = 'none';
-});
-modal.addEventListener('click', (e) => {
-  if (e.target === modal) modal.style.display = 'none';
-});
-
-// Галерея стрелками
+// Исправленная галерея
 const galleryWrapper = document.getElementById('gallery-wrapper');
 const galleryItems = document.querySelectorAll('.gallery-item');
 const totalItems = galleryItems.length;
@@ -403,73 +564,167 @@ let currentIndex = 0;
 
 const moveGallery = () => {
   if (galleryItems.length === 0) return;
-  const itemWidth = galleryItems[0].offsetWidth + parseFloat(getComputedStyle(galleryItems[0]).marginRight);
-  // Ограничение
+ 
+  const item = galleryItems[0];
+  const style = window.getComputedStyle(item);
+  const itemWidth = item.offsetWidth + parseInt(style.marginRight);
+ 
+  // Ограничение индекса
   if (currentIndex < 0) currentIndex = 0;
   if (currentIndex > totalItems - 1) currentIndex = totalItems - 1;
+ 
   galleryWrapper.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
 };
 
 // Обработчики стрелок
 document.getElementById('next').addEventListener('click', () => {
-  if (currentIndex < totalItems - 1) { currentIndex++; moveGallery(); }
+  if (currentIndex < totalItems - 1) {
+    currentIndex++;
+    moveGallery();
+  }
 });
+
 document.getElementById('prev').addEventListener('click', () => {
-  if (currentIndex > 0) { currentIndex--; moveGallery(); }
+  if (currentIndex > 0) {
+    currentIndex--;
+    moveGallery();
+  }
 });
 
 // Переход при ресайзе
-window.addEventListener('resize', () => {
-  moveGallery();
+window.addEventListener('resize', moveGallery);
+
+// Инициализация галереи
+moveGallery();
+
+// Исправленная кнопка "Заказать праздник"
+document.getElementById('startBtn').addEventListener('click', function() {
+  const contactsSection = document.getElementById('contacts');
+  if (contactsSection) {
+    contactsSection.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
+  }
 });
 
-// Показ/скрытие воздушных шаров
-const balloonsSection = document.querySelector('#balloons');
-const shapesGallery = document.getElementById('shapesGallery');
-
-if (balloonsSection && shapesGallery) {
-  balloonsSection.addEventListener('click', () => {
-    if (shapesGallery.style.display === 'none' || shapesGallery.style.display === '') {
-      shapesGallery.style.display = 'flex';
-    } else {
-      shapesGallery.style.display = 'none';
-    }
+// Увеличение фото героев - ИСПРАВЛЕНО
+document.querySelectorAll('.costume-photo').forEach(img => {
+  img.addEventListener('click', function() {
+    // Убираем увеличение у всех изображений
+    document.querySelectorAll('.costume-photo').forEach(otherImg => {
+      if (otherImg !== this) {
+        otherImg.classList.remove('enlarged');
+      }
+    });
+    // Переключаем увеличение для текущего изображения
+    this.classList.toggle('enlarged');
   });
-}
+});
 
-// Увеличение изображений воздушных шаров
-document.querySelectorAll('#shapesGallery img').forEach(img => {
-  img.addEventListener('click', () => {
-    document.getElementById('modalImage').src = img.src;
-    document.getElementById('modalImage').alt = img.alt;
-    document.getElementById('imageModal').style.display = 'flex';
+// Модальное окно для всех изображений - ИСПРАВЛЕНО
+const modal = document.createElement('div');
+modal.className = 'modal';
+modal.id = 'imageModal';
+modal.innerHTML = `
+  <button class="modal-close" id="modalClose">&times;</button>
+  <img src="" alt="Увеличенное изображение" id="modalImage" />
+`;
+document.body.appendChild(modal);
+
+const modalImg = document.getElementById('modalImage');
+const modalClose = document.getElementById('modalClose');
+
+// Обработчики для галереи и шаров - ИСПРАВЛЕНО
+document.querySelectorAll('.gallery-item img, #shapesGallery img, .costume-photo').forEach(img => {
+  img.addEventListener('click', function(e) {
+    // Для фото героев используем переключение класса, а не модальное окно
+    if (this.classList.contains('costume-photo')) {
+      e.stopPropagation(); // Останавливаем всплытие, чтобы не открывалось модальное окно
+      return;
+    }
+    
+    // Для остальных изображений открываем модальное окно
+    modal.style.display = 'flex';
+    modalImg.src = this.src;
+    modalImg.alt = this.alt;
   });
 });
 
 // Закрытие модального окна
-document.getElementById('modalClose').addEventListener('click', () => {
-  document.getElementById('imageModal').style.display = 'none';
+modalClose.addEventListener('click', function() {
+  modal.style.display = 'none';
 });
-document.getElementById('imageModal').addEventListener('click', (e) => {
-  if (e.target === document.getElementById('imageModal')) {
-    document.getElementById('imageModal').style.display = 'none';
+
+modal.addEventListener('click', function(e) {
+  if (e.target === modal) {
+    modal.style.display = 'none';
   }
 });
 
-// Увеличение фото в "Наших героях"
-document.querySelectorAll('.costume-photo').forEach(img => {
-  img.addEventListener('click', () => {
-    if (!img.classList.contains('enlarged')) {
-      img.classList.add('enlarged');
-    } else {
-      img.classList.remove('enlarged');
+// Закрытие модального окна по клавише ESC
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    modal.style.display = 'none';
+  }
+});
+
+// Показ/скрытие воздушных шаров (исправлено)
+const balloonsSection = document.querySelector('#balloons');
+const shapesGallery = document.getElementById('shapesGallery');
+
+if (balloonsSection && shapesGallery) {
+  // Галерея шаров теперь всегда видима
+  shapesGallery.style.display = 'flex';
+}
+
+// Плавный скролл для навигации
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    const targetID = this.getAttribute('href').slice(1);
+    const target = document.getElementById(targetID);
+    if (target) {
+      target.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
     }
   });
 });
+
+// Обработка формы
+document.getElementById('feedbackForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const form = e.target;
+  const formData = new FormData(form);
+  const responseDiv = document.getElementById('formResponse');
+
+  fetch(form.action, {
+    method: 'POST',
+    body: formData,
+    headers: { 'Accept': 'application/json' }
+  }).then(response => {
+    if (response.ok) {
+      responseDiv.innerHTML = 'Спасибо! Ваша обратная связь отправлена.';
+      responseDiv.style.color = '#3afa00';
+      form.reset();
+    } else {
+      responseDiv.innerHTML = 'Произошла ошибка при отправке. Попробуйте позже.';
+      responseDiv.style.color = '#ff4500';
+    }
+  }).catch(error => {
+    responseDiv.innerHTML = 'Ошибка сети. Попробуйте позже.';
+    responseDiv.style.color = '#ff4500';
+  });
+});
 </script>
+
+<!-- Подвал -->
+<footer class="footer">
+  <p>&copy; 2024 Аниматор СПБ. Все права защищены.</p>
+</footer>
+
 </div>
 </body>
 </html>
-
-
-
